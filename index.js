@@ -52,6 +52,10 @@ io.on('connection', (socket) => {
         io.emit("query_edited_emit", data);
     });
 
+    socket.on("reclaim_request_sent", async (data) => {
+        console.log("reclaim_request_sent  " + data.query_id)
+        io.emit("reclaim_request_sent_emit", data);
+    });
 
 
 
